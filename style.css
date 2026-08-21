@@ -69,8 +69,6 @@ html,body{
   padding: 30px 94px;
   background: var(--blue);
   border: 8px solid var(--black);
-  clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
-  box-shadow: 19px 19px 0 var(--black);
 }
 .banner.alt{ background: var(--white); }
 .banner.dark{ background: var(--black); border-color: var(--blue); }
