@@ -1,9 +1,9 @@
-/* ========================================================
+/* =========================================================
    SISTEMA VISUAL — "MIDNIGHT CUT"
    Inspirado nos menus do Persona 5, com paleta preto/branco
    + azul elétrico no lugar do vermelho.
    Canvas de referência: 2560x1440.
-   ======================================================== */
+   ========================================================= */
 
 :root{
   --navy-deep:  #070B1A;
@@ -147,12 +147,12 @@ html,body{
 /* ---------- MOLDURA ANGULAR DE WEBCAM (arquivo próprio, sem preenchimento) ---------- */
 .cam-frame{
   position:absolute;
-  border: 8px solid var(--black);
-  box-shadow: inset 0 0 0 4px var(--blue);
+  border: 10px solid var(--black);
+  box-shadow: inset 0 0 0 8px var(--blue);
   background: transparent;
 }
 .cam-frame .cam-tag{
-  position:absolute; top:-4px; left:-4px;
+  position:absolute; top:2px; left:2px;
   background:var(--blue); color:var(--white);
   font-family:'Archivo Black', sans-serif; letter-spacing:1px;
   font-size:26px;
