@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Background</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body{ background:#04050B; }
+  .corner-tri{ position:absolute; width:0; height:0; border-style:solid; }
+  .tri-tl{ top:0; left:0; border-width:0 293px 293px 0; border-color:transparent var(--blue-deep) transparent transparent; opacity:.45; }
+</style>
+</head>
+<body>
+  <!-- Fundo único, usado por trás de todas as cenas (Iniciando em breve, Volto já,
+       Encerrando, Just Chatting...). Coloque os elementos soltos (banners,
+       moldura da webcam, chat) por cima dele, em fontes de navegador separadas. -->
+  <div class="scene">
+    <div class="bg-full"></div>
+    <div class="bg-slash"></div>
+    <div class="corner-tri tri-tl"></div>
+
+    <div class="halftone" style="top:80px; right:693px; width:293px; height:293px; clip-path:polygon(50% 0,100% 100%,0 100%);"></div>
+    <div class="halftone blue" style="top:269px; left:40px; width:180px; height:180px; clip-path:polygon(0 0,100% 30%,70% 100%,0 70%);"></div>
+
+    <div class="info-bar">
+      <div class="title">Just Chatting</div>
+      <div class="handle">twitch.tv/iambrunns &nbsp;·&nbsp; @brunns_</div>
+    </div>
+
+    <div class="particle" style="top:133px; left:1200px; animation-delay:.5s;"></div>
+    <div class="particle sq2" style="top:1200px; left:1280px; animation-delay:1.3s;"></div>
+    <div class="particle sq3" style="top:1090px; left:1470px;"></div>
+  </div>
+</body>
+</html>
