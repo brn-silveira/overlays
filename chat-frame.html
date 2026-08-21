@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Chat Frame</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html,body{ background:transparent; }
+
+  /* Elemento solto — posicione onde quiser. A Fonte de Navegador com o
+     popout do chat da Twitch deve ficar LOGO ABAIXO desta, encaixada
+     exatamente sobre a área "chat-slot" abaixo. Veja chat-custom.css
+     para deixar o visual do chat combinando com o tema. */
+  .chat-panel{
+    position:absolute;
+    left: 1573px; top: 173px;
+    width: 880px; height: 1013px;
+    background: var(--black);
+    border: 8px solid var(--black);
+    outline: 4px solid var(--blue);
+    outline-offset: -16px;
+  }
+  .chat-panel .banner{
+    position:absolute; top:-45px; left:-13px;
+    transform: rotate(-2deg);
+    padding:19px 53px;
+  }
+  .chat-panel .banner h2{ font-size:34px; }
+  .chat-slot{
+    position:absolute; top:93px; left:19px; right:19px; bottom:19px;
+    background: rgba(20,40,99,.35);
+  }
+  .chat-slot .hint{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:53px;
+    color: var(--blue-bright);
+    font-family:'JetBrains Mono', monospace;
+    font-size:21px; letter-spacing:1px; line-height:1.6; opacity:.7;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="chat-panel">
+      <div class="banner"><h2>Chat</h2></div>
+      <div class="chat-slot">
+        <div class="hint"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

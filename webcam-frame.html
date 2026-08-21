@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Webcam Frame</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html,body{ background:transparent; }
+
+  /* Elemento solto, sem preenchimento — coloque a sua fonte de vídeo
+     (webcam) LOGO ABAIXO desta fonte na lista de Fontes do OBS, com
+     exatamente o mesmo tamanho/posição do retângulo abaixo.
+     Tamanho padrão: 960x540 (16:9). Se for mudar, mantenha a proporção
+     16:9 (ex: 640x360, 1120x630, 1400x788...) para a borda encaixar certo. */
+  .cam-frame{
+    left: 120px; top: 349px;
+    width: 960px; height: 540px;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cam-frame">
+      <div class="cam-tag mono">CAM</div>
+    </div>
+  </div>
+</body>
+</html>
