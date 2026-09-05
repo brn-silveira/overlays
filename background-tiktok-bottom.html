@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Background — TikTok (sem jogo em tela)</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Tamanho próprio — ajuste a altura (height) se precisar bater com outro
+     espaço. Como os losangos abaixo usam posição em % (não px), eles se
+     reajustam sozinhos sempre que você mudar esse valor. */
+  html, body{
+    width: 1080px;
+    height: 1080px;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .bottom-bg{
+    position:relative;
+    width:100%; height:100%;
+    overflow:hidden;
+  }
+
+  /* Losangos flutuantes concentrados mais à direita — o chat nativo do
+     TikTok aparece do lado esquerdo, então evitamos essa área. */
+  .particle{ position:absolute; }
+</style>
+</head>
+<body>
+  <div class="bottom-bg">
+    <div class="bg-full"></div>
+
+    <div class="halftone blue" style="top:5%; right:8%; width:110px; height:110px; clip-path:polygon(0 0,100% 20%,80% 100%,0% 80%);"></div>
+
+    <div class="particle" style="top:10%; right:14%; animation-delay:.2s;"></div>
+    <div class="particle sq3" style="top:24%; right:6%; animation-delay:1.4s;"></div>
+    <div class="particle sq2" style="top:38%; right:22%; animation-delay:.8s;"></div>
+
+    <div class="particle sq2" style="top:58%; right:10%; animation-delay:1.1s;"></div>
+    <div class="particle" style="top:74%; right:20%; animation-delay:.5s;"></div>
+    <div class="particle sq3" style="top:90%; right:8%; animation-delay:1.7s;"></div>
+  </div>
+</body>
+</html>
