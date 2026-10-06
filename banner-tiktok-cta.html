@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Banner CTA — TikTok</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html, body{
+    width: 1080px;
+    height: 90px;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .strip{
+    position:relative;
+    width:1080px; height:90px;
+    overflow:hidden;
+    background: linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 55%, var(--black) 100%);
+    border-top: 2px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
+  }
+
+  /* Losangos flutuantes assimétricos nas pontas — 1 de um lado, 2 do outro,
+     todos de tamanho diferente. Posições em % para se adaptarem se você
+     mudar a largura. */
+  .particle{ position:absolute; }
+
+  .stage{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    padding: 0 90px;
+  }
+
+  .phrase{
+    position:absolute;
+    display:flex; align-items:center; justify-content:center;
+    width:100%; text-align:center;
+    opacity:0;
+    animation: cycle 120s infinite;
+  }
+  .phrase span{
+    position:relative;
+    display:inline-block;
+    font-family:'Archivo Black', sans-serif;
+    color: var(--white);
+    text-transform:uppercase;
+    font-size:34px;
+    line-height:1.15;
+    letter-spacing:0.2px;
+  }
+  .phrase span::before,
+  .phrase span::after{
+    content: attr(data-text);
+    position:absolute; left:0; top:0; width:100%;
+    opacity:0;
+  }
+  .phrase span::before{ color: var(--blue-bright); }
+  .phrase span::after{ color: #ffffff; mix-blend-mode: difference; }
+
+  /* 4 frases, cada uma visível por 1/4 do ciclo (120s / 4 = 30s cada) */
+  .phrase:nth-child(1){ animation-delay: 0s; }
+  .phrase:nth-child(2){ animation-delay: 30s; }
+  .phrase:nth-child(3){ animation-delay: 60s; }
+  .phrase:nth-child(4){ animation-delay: 90s; }
+
+  .phrase:nth-child(1) span::before, .phrase:nth-child(1) span::after{ animation: glitchLayer 120s infinite; animation-delay:0s; }
+  .phrase:nth-child(2) span::before, .phrase:nth-child(2) span::after{ animation: glitchLayer 120s infinite; animation-delay:30s; }
+  .phrase:nth-child(3) span::before, .phrase:nth-child(3) span::after{ animation: glitchLayer 120s infinite; animation-delay:60s; }
+  .phrase:nth-child(4) span::before, .phrase:nth-child(4) span::after{ animation: glitchLayer 120s infinite; animation-delay:90s; }
+
+  /* fade rápido (~0,3s) no início e no fim de cada janela de 30s */
+  @keyframes cycle{
+    0%      { opacity:0; }
+    0.25%   { opacity:1; }
+    24.5%   { opacity:1; }
+    25%     { opacity:0; }
+    100%    { opacity:0; }
+  }
+
+  /* glitch rápido (~0,3s) */
+  @keyframes glitchLayer{
+    0%      { opacity:0; transform:translate(0,0); clip-path: inset(0 0 0 0); }
+    0.08%   { opacity:.8; transform:translate(-2px,0); clip-path: inset(10% 0 60% 0); }
+    0.17%   { opacity:.8; transform:translate(2px,0);  clip-path: inset(55% 0 10% 0); }
+    0.25%   { opacity:0; transform:translate(0,0); }
+    24.5%   { opacity:0; }
+    24.75%  { opacity:.8; transform:translate(2px,0); clip-path: inset(15% 0 55% 0); }
+    24.83%  { opacity:.8; transform:translate(-2px,0); clip-path: inset(50% 0 15% 0); }
+    25%     { opacity:0; transform:translate(0,0); }
+    100%    { opacity:0; }
+  }
+
+  .scanlines{
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.035) 0px,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: overlay;
+    pointer-events:none;
+  }
+</style>
+</head>
+<body>
+  <div class="strip">
+    <!-- Dois losangos do lado esquerdo, tamanhos diferentes -->
+    <div class="particle sq2" style="left:2.5%; top:28%; animation-delay:.3s;"></div>
+    <div class="particle sq3" style="left:6.5%; top:58%; animation-delay:.7s;"></div>
+
+    <!-- Losango único do lado direito -->
+    <div class="particle" style="right:3%; top:20%; animation-delay:1.1s;"></div>
+
+    <div class="stage">
+      <div class="phrase">
+        <span data-text="SEGUE E ATIVA O HEART ME!">SEGUE E ATIVA O HEART ME</span>
+      </div>
+      <div class="phrase">
+        <span data-text="TAP! TAP! TAP!">TAP! TAP! TAP!</span>
+      </div>
+      <div class="phrase">
+        <span data-text="VISITE O LINK NO PERFIL">VISITE O LINK NO PERFIL</span>
+      </div>
+      <div class="phrase">
+        <span data-text="COMPARTILHA COM UM AMIGO">COMPARTILHA COM UM AMIGO</span>
+      </div>
+    </div>
+
+    <div class="scanlines"></div>
+  </div>
+</body>
+</html>
